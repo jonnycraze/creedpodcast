@@ -27,7 +27,7 @@
 
 <style scoped lang="scss">
   .wrapper {
-      width: 100vw;
+      // width: 100vw;
       margin-top: 100vh;
       margin: 0;
       padding: 0;
@@ -70,7 +70,6 @@
     background-color: $color-offWhite;
     font-family: 'SpaceMono', Arial, Helvetica, sans-serif;
     margin: 0;
-    display: flex;
     min-width: 320px;
     min-height: 100vh;
     overflow-x: hidden;

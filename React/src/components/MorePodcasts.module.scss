@@ -1,0 +1,37 @@
+
+@import '../css/variables.scss';
+
+.container {
+    width: $width-contentContainer;
+    margin: $spacing-lg auto;
+    padding-top: $spacing-lg;
+    border-top: 1px solid $color-lightGray;
+
+    @media screen and (max-width: $screen-tablet) {
+        width: auto;
+        padding: 0 $spacing-md;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+}
+
+.headline {
+    font-size: $font-H2;
+    color: $color-darkPurple;
+}
+
+.blurbContainer {
+    @media screen and (max-width: $screen-tablet) {
+        // width: 90%;
+    }
+}
+
+.totalData {
+    color: $color-lightGray;
+    font-style: italic;
+    font-family: $font-workSans;
+    margin: 4px 0 $spacing-md;
+    opacity: .75;
+}

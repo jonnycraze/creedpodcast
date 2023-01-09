@@ -4,6 +4,7 @@ import { FaApple } from "react-icons/fa";
 import { FaRss } from "react-icons/fa";
 import { FaLink } from "react-icons/fa";
 import BlurbProps from '../interfaces/blurb';
+import BlurbLinks from './BlurbLinks';
 
 const Blurb:React.FC<BlurbProps> = ({data, position}) => {
     return (
@@ -19,23 +20,7 @@ const Blurb:React.FC<BlurbProps> = ({data, position}) => {
                         by <Link url={data.website} label={data.publisher} alt target="_blank" />
                     </span>
                     <span>{data.total_episodes} episodes</span>
-                    <div className={style.blurbContentLinks}>
-                        <Link url={`https://podcasts.apple.com/us/podcast/alexa-stop-podcast/id${data.itunes_id}`} label="Itunes">
-                            <span className={style.blurbContentLinksIcon}>
-                                <FaApple />
-                            </span>
-                        </Link>
-                        <Link url={data.website} label="Web">
-                            <span className={style.blurbContentLinksIcon}>
-                                <FaLink />
-                            </span>
-                        </Link>
-                        <Link url={data.rss} label="RSS">
-                            <span className={style.blurbContentLinksIcon}>
-                                <FaRss />
-                            </span>
-                        </Link>
-                    </div>
+                    <BlurbLinks data={data} />
                 </div>
             </div>
             <div className={style.blurbContentRight}>

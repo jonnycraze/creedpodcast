@@ -1,0 +1,15 @@
+@import '../css/variables.scss';
+
+select {
+    border: 1px solid #c9becb;
+    padding: 4px;
+    border-radius: 3px;
+    font-size: 18px;
+    color: $color-darkGray;
+}
+.label {
+    color: $color-darkGray;
+    display: block;
+    margin: 0 0 4px;
+    font-family: $font-workSans;
+}

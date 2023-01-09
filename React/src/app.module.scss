@@ -1,13 +1,31 @@
 @import './css/variables.scss';
 
 .wrapper {
-    width: 100vw;
+    // width: 100vw;
     margin-top: 100vh;
     margin: 0;
     padding: 0;
 }
 .content {
-    max-width: 730px;
+    max-width: $width-contentContainer;
     margin: 0 auto $spacing-lg;
-    padding: 15px 30px 15px 15px;
+    padding: $spacing-md;
+}
+.showMoreButton {
+    cursor: pointer;
+    padding: $spacing-sm $spacing-md;
+    background-color: $color-lightPurple;
+    color: $color-white;
+    border: none;
+    font-size: 16px;
+    border-radius: 4px;
+    letter-spacing: .05rem;
+    text-transform: uppercase;
+    box-shadow: 2px 2px 4px rgba($color: #000000, $alpha: 0.3);
+    transition: all 0.5s;
+
+    &:hover {
+        background-color: $color-darkPurple;
+        transition: all 0.5s;
+    }
 }
