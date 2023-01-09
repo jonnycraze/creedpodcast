@@ -1,0 +1,41 @@
+@use './Blurb.module.scss';
+@import '../css/variables.scss';
+
+.content {
+    @extend .blurbContent;
+
+    padding: $spacing-sm;
+    
+    @media screen and (max-width: $screen-tablet) {
+        flex-direction: row;
+        max-width: inherit;
+    }
+
+    .title {
+        margin: 0 0 $spacing-sm;
+    }
+
+    .thumbnail {
+        width: 80px;
+        height: 80px;
+    }
+
+    &Middle {
+        padding: 0 $spacing-sm;
+        flex: 1;
+
+        &Paragraph {
+            margin: 0 0 4px;
+        }
+
+        .totalEpisodes {
+            display: block;
+            font-family: $font-workSans ;
+        }
+    }
+    &Right {
+        font-size: 12px;
+        font-family: $font-workSans ;
+        width: 200px;
+    }
+}

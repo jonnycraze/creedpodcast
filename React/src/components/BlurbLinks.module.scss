@@ -1,0 +1,12 @@
+@import '../css/variables.scss';
+
+.link {
+    border-top: 1px solid $color-lightGray;
+    margin-top: $spacing-md;
+    padding-top: $spacing-sm;
+    text-transform: uppercase;
+
+    &Icon {
+        margin-right: 4px;
+    }
+}
