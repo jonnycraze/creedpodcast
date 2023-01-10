@@ -24,18 +24,13 @@
         padding: 0 $spacing-sm;
         flex: 1;
 
-        &Paragraph {
-            margin: 0 0 4px;
-        }
-
         .totalEpisodes {
             display: block;
             font-family: $font-workSans ;
         }
     }
-    &Right {
-        font-size: 12px;
-        font-family: $font-workSans ;
-        width: 200px;
+
+    &Publisher {
+        margin: 0 0 4px;
     }
 }

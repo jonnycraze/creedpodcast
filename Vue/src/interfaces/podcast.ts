@@ -2,6 +2,7 @@ interface Podcast {
     id: string,
     title: string,
     publisher: string,
+    category?: string,
     image: string,
     thumbnail: string,
     listennotes_url: string,
