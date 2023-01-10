@@ -1,9 +1,9 @@
 import Navigation from "./Navigation"
 import style from './Header.module.scss'
 
-const Header = () => {
+const Header = ({...rest}) => {
     return (
-        <header className={style.header}>
+        <header className={style.header} {...rest}>
             <Navigation />
             <div className={style.banner}>
                 <div className={style.headlineWrapper}>

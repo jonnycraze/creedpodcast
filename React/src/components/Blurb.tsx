@@ -1,14 +1,11 @@
 import style from './Blurb.module.scss';
 import Link from './Link';
-import { FaApple } from "react-icons/fa";
-import { FaRss } from "react-icons/fa";
-import { FaLink } from "react-icons/fa";
 import BlurbProps from '../interfaces/blurb';
 import BlurbLinks from './BlurbLinks';
 
-const Blurb:React.FC<BlurbProps> = ({data, position}) => {
+const Blurb:React.FC<BlurbProps> = ({data, position, ...rest}) => {
     return (
-        <article className={style.blurbContent}>
+        <article className={style.blurbContent} {...rest}>
             <div className={style.blurbContentLeft}>
                 <div className={style.blurbContentRank}>{position}</div>
                 <div className={style.thumbnailContainer}>
