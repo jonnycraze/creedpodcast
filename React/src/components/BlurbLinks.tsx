@@ -13,17 +13,17 @@ const BlurbLinks:React.FC<Props> = ({data}) => {
     return (
         <div className={style.links}>
             <Link url={`https://podcasts.apple.com/us/podcast/alexa-stop-podcast/id${data.itunes_id}`} label="Itunes">
-                <span className={style.linkIcon}>
+                <span className={style.linksIcon}>
                     <FaApple />
                 </span>
             </Link>
             <Link url={data.website} label="Web">
-                <span className={style.linkIcon}>
+                <span className={style.linksIcon}>
                     <FaLink />
                 </span>
             </Link>
             <Link url={data.rss} label="RSS">
-                <span className={style.linkIcon}>
+                <span className={style.linksIcon}>
                     <FaRss />
                 </span>
             </Link>

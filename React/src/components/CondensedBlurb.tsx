@@ -6,9 +6,9 @@ interface Props {
     data: Podcast
 }
 
-const CondensedBlurb:React.FC<Props> = ({ data }) => {
+const CondensedBlurb:React.FC<Props> = ({ data, ...rest }) => {
     return (
-        <div className={style.content}>
+        <div className={style.content} {...rest}>
             <div>
                 <img className={style.thumbnail} src={data.thumbnail} alt={data.title} />
             </div>

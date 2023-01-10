@@ -5,15 +5,15 @@ import Podcast from '../interfaces/podcast';
 import CondensedBlurb from './CondensedBlurb';
 import Select from './Select';
 
-const MorePodcasts = () => {
+export const Categories = [
+    'All',
+    'Technology',
+    'Web Design'
+];
+
+const MorePodcasts = ({...rest}) => {
     const [dataToShow, setDataToShow] = useState<(Podcast)[]>();
     const [filterBy, setFilterBy] = useState('All');
-    const Categories = [
-        'All',
-        'Technology',
-        'Web Design'
-    ];
-
     const selectCategory = useCallback((v:any) => {
         setFilterBy(v.currentTarget.value);
     }, [setFilterBy])
@@ -43,21 +43,23 @@ const MorePodcasts = () => {
             return;
         }
 
+        // console.log('USEEFFECT: ', filterBy)
+
         setDataToShow(data?.find(d => d.name === filterBy)?.podcasts);
     }, [filterBy, data]);
 
 
     return (
-        <div className={style.container} id="morePodcastContainer">
+        <div className={style.container} id="morePodcastContainer" {...rest}>
             <h2 className={style.headline}>More Procasts about Web Design &amp; Technology</h2>
             <Select label='Categories' options={Categories} onChange={selectCategory} />
             {dataToShow &&
                 <>
-                    <div className={style.totalData}>Total Podcasts: {dataToShow.length}</div>
+                    <div data-testid="totalPodcasts" className={style.totalData}>Total Podcasts: {dataToShow.length}</div>
                     <div>
                         {
-                            dataToShow.map(d => (
-                                <CondensedBlurb data={d} key={d.id} />
+                            dataToShow.map((d, i) => (
+                                <CondensedBlurb data-testid={`blurb-${i}-${d.category}`} data={d} key={d.id} />
                             ))
                         }
                     </div>
