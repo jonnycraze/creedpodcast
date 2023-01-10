@@ -8,7 +8,7 @@ describe('Select.tsx', () => {
             const { getByTestId } = render(<MorePodcasts />);
             expect(getByTestId('select')).not.toBeNull();
         })
-        it('Shows total categories', () => {
+        it('Shows total podcasts', () => {
             const { getByTestId } = render(<MorePodcasts />);
             expect(getByTestId('totalPodcasts').innerHTML).toEqual('Total Podcasts: 36');
         })

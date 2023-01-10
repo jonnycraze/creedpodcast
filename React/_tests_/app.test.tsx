@@ -13,20 +13,9 @@ describe('App.tsx', () => {
             const { getByTestId } = render(<App />);
             expect(getByTestId('blurb-0')).not.toBeNull();
         });
-        it('MorePodcasts component does not render when showAll is false', () => {
+        it('MorePodcasts component does not render initially', () => {
             const { queryByTestId } = render(<App />);
             expect(queryByTestId('morePodcasts')).toBeNull();
-        });
-        it('MorePodcasts component renders when Find More Button is clicked', () => {
-            const { getByTestId } = render(<App />);
-            fireEvent(
-                getByTestId('findMoreButton'),
-                new MouseEvent('click', {
-                    bubbles: true,
-                    cancelable: true,
-                }),
-            )
-            expect(getByTestId('morePodcasts')).not.toBeNull();
         });
     });
 

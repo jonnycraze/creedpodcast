@@ -13,6 +13,24 @@
     data[1].podcasts[7],
   ]);
 
+  const showMore = () => {
+    state.showMorePodcasts = true;
+
+
+    setTimeout(() => {
+      const element = document?.getElementById('morePodcastContainer');
+      const elementTop = element?.offsetTop || 0;
+      const elementPlusWindow = elementTop;
+      
+      window.scrollTo({
+        top: elementPlusWindow,
+        left: 0,
+        behavior: 'smooth',
+      });
+    }, 1);
+
+  }
+
   const state = reactive({
     showMorePodcasts: false,
   });
@@ -20,16 +38,16 @@
 
 <template>
   <section class="wrapper">
-    <Header />
+    <Header data-testid="header" />
     <div class="content">
       <div v-for="(item, i) in podcasts" :key="i">
-        <Blurb :data="item" :position="i+1" />
+        <Blurb :data-testid="`blurb-${i}`" :data="item" :position="i+1" />
       </div>
-      <button data-testid="findMoreButton" class="showMoreButton" @click="state.showMorePodcasts = true">
+      <button data-testid="findMoreButton" class="showMoreButton" @click="showMore">
         Find More Podcasts
       </button>
     </div>
-    <MorePodcasts v-if="state.showMorePodcasts" :data="{data}" />
+    <MorePodcasts id="morePodcastContainer" data-testid="morePodcasts" v-if="state.showMorePodcasts" :data="data" />
   </section>
 </template>
 

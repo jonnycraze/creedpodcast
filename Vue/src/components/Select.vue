@@ -11,7 +11,7 @@
 
 <template>
     <small class="label">{{ label }}</small>
-    <select @change="onChange">
+    <select data-testid="select" @change="onChange">
         <option v-for="o in options" :key="o">{{o}}</option>
     </select>
 </template>
