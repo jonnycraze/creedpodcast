@@ -33,3 +33,9 @@ Vue offers scoped styles as part of its framework, it's styles are also included
 
 ### Unit Testing
 I didn't get too in depth with my unit tests in each project. I did add a few different tests to ensure elements were rendered as expected, and events had the desired outcome. For testing these projects I used Vitest. Vitest is a newer alternative to Jest, however the concepts are largely the same. It's part of the Vite ecosystem and made sense to use. I used RTL for testing React and VTU for testing Vue.
+### Extras
+I added a few additional things to this codebase.
+* Vue codebase
+  * Executing the same assignment in another JS Framework to show the comparisons and contrasts.
+* View more Button
+  * I added an additional section to view all of the podcast data, and filter it by it's category

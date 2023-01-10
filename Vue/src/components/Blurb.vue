@@ -12,7 +12,7 @@
     <div class="contentLeft">
       <div class="contentRank">{{ position }}</div>
       <div class="thumbnailContainer">
-        <img class="contentThumbnail" :src="data.image" :alt="data.description" />
+        <img class="contentThumbnail" :src="data.image" :alt="data.title" />
       </div>
       <div class="contentLeftBody">
         <h2 class="contentTitle">{{ data.title }}</h2>

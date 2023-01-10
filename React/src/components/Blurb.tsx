@@ -9,7 +9,7 @@ const Blurb:React.FC<BlurbProps> = ({data, position, ...rest}) => {
             <div className={style.blurbContentLeft}>
                 <div className={style.blurbContentRank}>{position}</div>
                 <div className={style.thumbnailContainer}>
-                    <img className={style.blurbContentThumbnail} src={data.image} alt={data.description} />
+                    <img className={style.blurbContentThumbnail} src={data.image} alt={data.title} />
                 </div>
                 <div className={style.blurbContentLeftBody}>
                     <h2 className={style.blurbContentTitle}>{data.title}</h2>
