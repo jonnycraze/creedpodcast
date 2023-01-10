@@ -33,13 +33,13 @@ const MorePodcasts = () => {
                 _data = [..._data, ...d.podcasts];
             });
 
-            const sorted = _data.sort((a, b) => {
+            _data = _data.sort((a, b) => {
                 if (a.title < b.title) return -1;
                 if (a.title > b.title) return 1;
                 return 0;
             });
 
-            setDataToShow(sorted);
+            setDataToShow(_data);
             return;
         }
 
@@ -53,8 +53,8 @@ const MorePodcasts = () => {
             <Select label='Categories' options={Categories} onChange={selectCategory} />
             {dataToShow &&
                 <>
-                    <div className={style.totalData}>Total Pocasts: {dataToShow.length}</div>
-                    <div className={style.blurbContainer}>
+                    <div className={style.totalData}>Total Podcasts: {dataToShow.length}</div>
+                    <div>
                         {
                             dataToShow.map(d => (
                                 <CondensedBlurb data={d} key={d.id} />

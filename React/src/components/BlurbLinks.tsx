@@ -11,7 +11,7 @@ interface Props {
 
 const BlurbLinks:React.FC<Props> = ({data}) => {
     return (
-        <div className={style.link}>
+        <div className={style.links}>
             <Link url={`https://podcasts.apple.com/us/podcast/alexa-stop-podcast/id${data.itunes_id}`} label="Itunes">
                 <span className={style.linkIcon}>
                     <FaApple />

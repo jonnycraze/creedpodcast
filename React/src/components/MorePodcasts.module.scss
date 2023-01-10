@@ -22,12 +22,6 @@
     color: $color-darkPurple;
 }
 
-.blurbContainer {
-    @media screen and (max-width: $screen-tablet) {
-        // width: 90%;
-    }
-}
-
 .totalData {
     color: $color-lightGray;
     font-style: italic;

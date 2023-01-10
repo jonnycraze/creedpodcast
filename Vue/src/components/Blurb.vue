@@ -1,6 +1,7 @@
 <script setup lang="ts">
   import { defineProps } from 'vue';
   import Podcast from '../interfaces/podcast';
+  import BlurbLinks from './BlurbLinks.vue';
   import Link from './Link.vue';
 
   defineProps<{ data: Podcast, position: number }>()
@@ -19,17 +20,7 @@
           by <Link :url="data.website" :label="data.publisher" target="_blank" alt />
         </span>
         <span>{{data.total_episodes}} episodes</span>
-        <div class="contentLinks">
-          <Link :url="`https://podcasts.apple.com/us/podcast/alexa-stop-podcast/id${data.itunes_id}`" label="Itunes">
-            <fa-icon icon="fa-brands fa-apple" />
-          </Link>
-          <Link :url="data.website" label="Website">
-            <fa-icon icon="fa-solid fa-link" />
-          </Link>
-          <Link :url="data.rss" label="RSS">
-            <fa-icon icon="fa-solid fa-rss" />
-          </Link>
-        </div>
+        <BlurbLinks :data="data" />
       </div>
     </div>
     <div class="contentRight">

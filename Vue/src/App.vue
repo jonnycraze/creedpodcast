@@ -3,6 +3,7 @@
   import data from './assets/data/podcasts-by-genre.json';
   import Header from './components/Header.vue';
   import Blurb from './components/Blurb.vue';
+  import MorePodcasts from './components/MorePodcasts.vue';
 
   const podcasts = ref([
     data[1].podcasts[0],
@@ -22,12 +23,12 @@
         <Blurb :data="item" :position="i+1" />
       </div>
     </div>
+    <MorePodcasts v-if="data" :data="{data}" />
   </section>
 </template>
 
 <style scoped lang="scss">
   .wrapper {
-      // width: 100vw;
       margin-top: 100vh;
       margin: 0;
       padding: 0;

@@ -9,7 +9,7 @@ interface Props {
 
 const Select:React.FC<Props> = ({options, onChange, label, ...rest}) => {
     return (
-        <div className={style.filter}>
+        <div>
             <small className={style.label}>{label}</small>
             <select onChange={onChange} {...rest}>
                 {options.map(o => (
