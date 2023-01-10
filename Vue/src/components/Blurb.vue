@@ -110,7 +110,7 @@
 
         &Description {
             font-family: 'WorkSans', Arial, Helvetica, sans-serif;
-            height: 164px;
+            height: 162px;
             margin: 0;
             overflow: hidden;
             text-overflow: ellipsis;
