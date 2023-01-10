@@ -4,7 +4,7 @@
     import Select from './Select.vue';
     import CondensedBlurb from './CondensedBlurb.vue';
     import { defineProps, reactive, computed, toRefs, ref } from 'vue';
-    const categories = ref(['All','Technology','Web Design']);
+    const categories = ['All','Technology','Web Design'];
     const props = defineProps<{ data: Array<PodcastCategory> }>();
     const { data } = toRefs(props);
     const state = reactive({
@@ -12,7 +12,7 @@
     });
 
     const dataToShow = computed(() => {
-        const array = data?.value.data;
+        const array = data?.value;
 
         if (state.filterBy === 'All') {
             let _data: (Podcast)[] = [];
@@ -44,12 +44,12 @@
 </script>
 
 <template>
-    <div class="container">
+    <div class="container" data-testid="morePodcasts">
         <h2 class="headline">More Procasts about Web Design &amp; Technology</h2>
-        <Select label="Categories" :options="categories" @change="selectCategory" />
+        <Select data-testid="selectCategory" label="Categories" :options="categories" @change="selectCategory" />
         <template v-if="dataToShow">
-            <div class="totalData">Total Podcasts: {{ dataToShow.length }}</div>
-            <CondensedBlurb v-for="item in dataToShow" :data="item" :key="item.id" />
+            <div data-testid="totalPodcasts" class="totalData">Total Podcasts: {{ dataToShow.length }}</div>
+            <CondensedBlurb data-testid="condensedBlurb" v-for="item in dataToShow" :data="item" :key="item.id" />
         </template>
     </div>
 </template>
